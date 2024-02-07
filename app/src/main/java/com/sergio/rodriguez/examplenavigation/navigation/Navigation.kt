@@ -64,7 +64,29 @@ fun Screen3(
         contentAlignment = Alignment.Center
     ){
         Text(
-            text = "Ir a la pantalla 1",
+            text = "Ir a la pantalla 4",
+            modifier = Modifier.
+            clickable {
+                onNavigation()
+            }
+        )
+    }
+}
+
+@Composable
+fun Screen4(
+    modifier: Modifier = Modifier,
+    name: String,
+    onNavigation: () -> Unit,
+) {
+    Box(
+        modifier = modifier
+            .fillMaxSize()
+            .background(color = Color.Gray),
+        contentAlignment = Alignment.Center
+    ){
+        Text(
+            text = name,
             modifier = Modifier.
             clickable {
                 onNavigation()
