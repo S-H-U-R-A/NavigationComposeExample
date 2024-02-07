@@ -76,7 +76,7 @@ fun Screen3(
 @Composable
 fun Screen4(
     modifier: Modifier = Modifier,
-    name: String,
+    name: Int,
     onNavigation: () -> Unit,
 ) {
     Box(
@@ -86,7 +86,7 @@ fun Screen4(
         contentAlignment = Alignment.Center
     ){
         Text(
-            text = name,
+            text = name.toString(),
             modifier = Modifier.
             clickable {
                 onNavigation()

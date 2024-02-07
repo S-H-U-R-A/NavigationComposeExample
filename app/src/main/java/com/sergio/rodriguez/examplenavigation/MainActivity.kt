@@ -7,11 +7,14 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
+import androidx.navigation.NamedNavArgument
 import androidx.navigation.NavBackStackEntry
 import androidx.navigation.NavHostController
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 import com.sergio.rodriguez.examplenavigation.navigation.Routes
 import com.sergio.rodriguez.examplenavigation.navigation.Routes.*
 import com.sergio.rodriguez.examplenavigation.navigation.Screen1
@@ -54,7 +57,7 @@ class MainActivity : ComponentActivity() {
                             route = Pantalla3.route
                         ){
                             Screen3(){
-                                navHostController.navigate(route = "Pantalla4/Sergio"){
+                                navHostController.navigate(route = "Pantalla4/0117"){
                                     this.popUpTo(route= Pantalla4.route){
                                         this.inclusive = false
                                     }
@@ -62,9 +65,17 @@ class MainActivity : ComponentActivity() {
                             }
                         }
                         composable(
-                            route = Pantalla4.route
+                            route = Pantalla4.route,
+                            arguments = listOf(
+                                navArgument(name = "name"){
+                                    this.type = NavType.IntType
+                                    this.defaultValue = 0
+                                }
+                            )
                         ){navBackStackEntry: NavBackStackEntry ->
-                            val argument = navBackStackEntry.arguments?.getString("name") ?: "Sin Nombre"
+
+                            val argument = navBackStackEntry.arguments?.getInt("name") ?: 0
+
                             Screen4(
                                 name = argument
                             ){
