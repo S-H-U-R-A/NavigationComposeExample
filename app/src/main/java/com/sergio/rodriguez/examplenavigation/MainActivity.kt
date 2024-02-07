@@ -6,14 +6,14 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.sergio.rodriguez.examplenavigation.navigation.Routes.Pantalla1
+import com.sergio.rodriguez.examplenavigation.navigation.Routes.Pantalla2
+import com.sergio.rodriguez.examplenavigation.navigation.Routes.Pantalla3
 import com.sergio.rodriguez.examplenavigation.navigation.Screen1
 import com.sergio.rodriguez.examplenavigation.navigation.Screen2
 import com.sergio.rodriguez.examplenavigation.navigation.Screen3
@@ -33,28 +33,28 @@ class MainActivity : ComponentActivity() {
 
                     NavHost(
                         navController = navHostController,
-                        startDestination = "pantalla1"
+                        startDestination = Pantalla1.route
                     ){
                         composable(
-                            route = "pantalla1"
+                            route = Pantalla1.route
                         ){
                             Screen1(){
-                                navHostController.navigate(route = "pantalla2")
+                                navHostController.navigate(route = Pantalla2.route)
                             }
                         }
                         composable(
-                            route = "pantalla2"
+                            route = Pantalla2.route
                         ){
                             Screen2(){
-                                navHostController.navigate(route = "pantalla3")
+                                navHostController.navigate(route = Pantalla3.route)
                             }
                         }
                         composable(
-                            route = "pantalla3"
+                            route = Pantalla3.route
                         ){
                             Screen3(){
-                                navHostController.navigate(route = "pantalla1"){
-                                    this.popUpTo(route= "pantalla1"){
+                                navHostController.navigate(route = Pantalla1.route){
+                                    this.popUpTo(route= Pantalla1.route){
                                         this.inclusive = true
                                     }
                                 }
