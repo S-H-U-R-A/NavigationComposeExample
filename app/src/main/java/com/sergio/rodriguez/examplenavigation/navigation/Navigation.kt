@@ -9,6 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.style.TextAlign
 
 @Composable
 fun Screen1(
@@ -76,7 +77,9 @@ fun Screen3(
 @Composable
 fun Screen4(
     modifier: Modifier = Modifier,
-    name: Int,
+    id: Int,
+    age: Int,
+    name: String,
     onNavigation: () -> Unit,
 ) {
     Box(
@@ -86,7 +89,8 @@ fun Screen4(
         contentAlignment = Alignment.Center
     ){
         Text(
-            text = name.toString(),
+            text = "Welcome to the screen 4 with the following arguments: id: $id, age: $age, name: $name",
+            textAlign = TextAlign.Center,
             modifier = Modifier.
             clickable {
                 onNavigation()

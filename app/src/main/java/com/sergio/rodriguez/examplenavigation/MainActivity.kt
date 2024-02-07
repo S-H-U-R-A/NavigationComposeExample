@@ -57,7 +57,13 @@ class MainActivity : ComponentActivity() {
                             route = Pantalla3.route
                         ){
                             Screen3(){
-                                navHostController.navigate(route = "Pantalla4/0117"){
+                                navHostController.navigate(
+                                    route = Pantalla4.sendArgumentToRoute(
+                                        id = 1,
+                                        age = 25,
+                                        name = "Sergio"
+                                    )
+                                ){
                                     this.popUpTo(route= Pantalla4.route){
                                         this.inclusive = false
                                     }
@@ -66,18 +72,30 @@ class MainActivity : ComponentActivity() {
                         }
                         composable(
                             route = Pantalla4.route,
-                            arguments = listOf(
-                                navArgument(name = "name"){
+                            arguments = listOf( // Se definen los argumentos que recibirá esta pantalla
+                                navArgument(name = "id"){
+                                    this.type = NavType.IntType// En la definición del argumento especificamos el tipo
+                                    this.defaultValue = 0
+                                },
+                                navArgument(name = "age"){
                                     this.type = NavType.IntType
                                     this.defaultValue = 0
+                                },
+                                navArgument(name = "name"){
+                                    this.type = NavType.StringType
+                                    this.defaultValue = ""
                                 }
                             )
                         ){navBackStackEntry: NavBackStackEntry ->
 
-                            val argument = navBackStackEntry.arguments?.getInt("name") ?: 0
+                            val id = navBackStackEntry.arguments!!.getInt("id")
+                            val age = navBackStackEntry.arguments!!.getInt("age")
+                            val name = navBackStackEntry.arguments!!.getString("name") ?: ""
 
                             Screen4(
-                                name = argument
+                                id = id,
+                                age = age,
+                                name = name
                             ){
                                 navHostController.navigate(route = Pantalla1.route){
                                     this.popUpTo(route= Pantalla1.route){
