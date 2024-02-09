@@ -21,6 +21,7 @@ import com.sergio.rodriguez.examplenavigation.navigation.Screen1
 import com.sergio.rodriguez.examplenavigation.navigation.Screen2
 import com.sergio.rodriguez.examplenavigation.navigation.Screen3
 import com.sergio.rodriguez.examplenavigation.navigation.Screen4
+import com.sergio.rodriguez.examplenavigation.navigation.Screen5
 import com.sergio.rodriguez.examplenavigation.ui.theme.ExampleNavigationTheme
 
 class MainActivity : ComponentActivity() {
@@ -33,7 +34,9 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
+
                     val navHostController: NavHostController = rememberNavController()
+
 
                     NavHost(
                         navController = navHostController,
@@ -57,6 +60,7 @@ class MainActivity : ComponentActivity() {
                             route = Pantalla3.route
                         ){
                             Screen3(){
+
                                 navHostController.navigate(
                                     route = Pantalla4.sendArgumentToRoute(
                                         id = 1,
@@ -64,7 +68,7 @@ class MainActivity : ComponentActivity() {
                                         name = "Sergio"
                                     )
                                 ){
-                                    this.popUpTo(route= Pantalla4.route){
+                                    this.popUpTo(route= Pantalla4.sendArgumentToRoute(id = 1, age = 25, name = "Sergio")){
                                         this.inclusive = false
                                     }
                                 }
@@ -75,27 +79,46 @@ class MainActivity : ComponentActivity() {
                             arguments = listOf( // Se definen los argumentos que recibirá esta pantalla
                                 navArgument(name = "id"){
                                     this.type = NavType.IntType// En la definición del argumento especificamos el tipo
-                                    this.defaultValue = 0
                                 },
                                 navArgument(name = "age"){
                                     this.type = NavType.IntType
-                                    this.defaultValue = 0
                                 },
                                 navArgument(name = "name"){
                                     this.type = NavType.StringType
-                                    this.defaultValue = ""
                                 }
                             )
                         ){navBackStackEntry: NavBackStackEntry ->
 
                             val id = navBackStackEntry.arguments!!.getInt("id")
                             val age = navBackStackEntry.arguments!!.getInt("age")
-                            val name = navBackStackEntry.arguments!!.getString("name") ?: ""
+                            val name = navBackStackEntry.arguments!!.getString("name")!!
 
                             Screen4(
                                 id = id,
                                 age = age,
                                 name = name
+                            ){
+                                navHostController.navigate(route = Pantalla5.route /*Pantalla5.sendArgumentToRoute(fullname = "Sergio Rodriguez")*/){//Podemos o no enviar argumentos a la siguiente pantalla
+                                    this.popUpTo(route= Pantalla5.sendArgumentToRoute(fullname = "Sergio Rodriguez")){
+                                        this.inclusive = false
+                                    }
+                                }
+                            }
+                        }
+                        composable(
+                            route = Pantalla5.route,
+                            arguments = listOf( // Se definen los argumentos que recibirá esta pantalla
+                                navArgument(name = "fullname"){
+                                    this.type = NavType.StringType
+                                    this.defaultValue = "Pepe"
+                                }
+                            )
+                        ){navBackStackEntry: NavBackStackEntry ->
+
+                            val fullname = navBackStackEntry.arguments!!.getString("fullname")!!
+
+                            Screen5(
+                                fullname = fullname
                             ){
                                 navHostController.navigate(route = Pantalla1.route){
                                     this.popUpTo(route= Pantalla1.route){
@@ -104,7 +127,6 @@ class MainActivity : ComponentActivity() {
                                 }
                             }
                         }
-
                     }
                 }
             }

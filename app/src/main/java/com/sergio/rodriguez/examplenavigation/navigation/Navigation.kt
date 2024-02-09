@@ -85,11 +85,34 @@ fun Screen4(
     Box(
         modifier = modifier
             .fillMaxSize()
-            .background(color = Color.Gray),
+            .background(color = Color.Yellow),
         contentAlignment = Alignment.Center
     ){
         Text(
             text = "Welcome to the screen 4 with the following arguments: id: $id, age: $age, name: $name",
+            textAlign = TextAlign.Center,
+            modifier = Modifier.
+            clickable {
+                onNavigation()
+            }
+        )
+    }
+}
+
+@Composable
+fun Screen5(
+    modifier: Modifier = Modifier,
+    fullname: String,
+    onNavigation: () -> Unit,
+) {
+    Box(
+        modifier = modifier
+            .fillMaxSize()
+            .background(color = Color.Gray),
+        contentAlignment = Alignment.Center
+    ){
+        Text(
+            text = "Mi nombre completo es: $fullname",
             textAlign = TextAlign.Center,
             modifier = Modifier.
             clickable {

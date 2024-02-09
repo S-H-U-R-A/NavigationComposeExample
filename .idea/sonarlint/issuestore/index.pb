@@ -7,3 +7,5 @@ x
 Happ/src/main/java/com/sergio/rodriguez/examplenavigation/MainActivity.kt,5\8\58679362d6e5056e3556b0b0913e48cdcdd375a0
 }
 Mapp/src/main/java/com/sergio/rodriguez/examplenavigation/navigation/Routes.kt,0\b\0b310480026cd4c41b74e2fa0082838ed1886d44
+Ž
+^app/src/main/java/com/sergio/rodriguez/examplenavigation/pruebasNavegacionPropias/Pantallas.kt,3\3\339a03f414872d7a5373ef850f92ef70a1e12f03
