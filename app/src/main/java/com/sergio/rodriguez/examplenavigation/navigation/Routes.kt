@@ -1,6 +1,7 @@
 package com.sergio.rodriguez.examplenavigation.navigation
 
 
+/*
 sealed class Routes(val route: String) {
 
     data object Pantalla1 : Routes(route= "Pantalla1")
@@ -16,4 +17,4 @@ sealed class Routes(val route: String) {
             return "Pantalla5?fullname=$fullname"
         }
     }
-}
+}*/

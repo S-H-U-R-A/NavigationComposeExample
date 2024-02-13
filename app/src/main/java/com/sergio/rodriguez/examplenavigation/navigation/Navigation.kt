@@ -11,6 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 
+/*
 @Composable
 fun Screen1(
     modifier: Modifier = Modifier,
@@ -120,4 +121,4 @@ fun Screen5(
             }
         )
     }
-}
+}*/
