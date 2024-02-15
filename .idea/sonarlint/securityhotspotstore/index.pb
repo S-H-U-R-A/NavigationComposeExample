@@ -13,3 +13,15 @@ Mapp/src/main/java/com/sergio/rodriguez/examplenavigation/navigation/Routes.kt,
 aapp/src/main/java/com/sergio/rodriguez/examplenavigation/pruebasNavegacionPropias/PruebaRoutes.kt,a\3\a3efe1dce7435a18f21a390a1964094120b225e3
 P
  app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
+f
+6di/src/main/java/com/sergio/rodriguez/di/DiActivity.kt,4\8\481ce6b1a51208f8ca1be92793c00b551177bbce
+W
+'navigation/src/main/AndroidManifest.xml,e\1\e151d66f0309596beae4bd8cb078714acbaf7ac0
+C
+settings.gradle.kts,7\4\749edfcc96398253e5b3416184e95c46621da850
+r
+Bnavigation/src/main/java/com/sergio/rodriguez/navigation/Routes.kt,7\d\7dc60df2aa8bd3914e071b6921e88a9dd4aa296a
+K
+navigation/build.gradle.kts,7\2\72a63bd429fe806a7ac06bbbb579bf88f04b3e2b
+@
+build.gradle.kts,d\b\dbcff70658daf80b53ce624f6adcaa529df5ed8d

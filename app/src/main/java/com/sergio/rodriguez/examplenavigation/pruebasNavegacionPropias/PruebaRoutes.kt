@@ -1,5 +1,8 @@
 package com.sergio.rodriguez.examplenavigation.pruebasNavegacionPropias
 
+import androidx.annotation.StringRes
+import com.sergio.rodriguez.examplenavigation.R
+
 //RUTAS DEL GRAFO PRINCIPAL
 sealed class PruebaRoutes(val route: String) {
     data object Pantalla1 : PruebaRoutes(route= "Pantalla1")
@@ -21,3 +24,4 @@ sealed class RoutesNested(val route: String){
     data object Pantalla2Anidada: RoutesNested(route = "Register")
     data object Pantalla3Anidada: RoutesNested(route = "ForgotPassword")
 }
+

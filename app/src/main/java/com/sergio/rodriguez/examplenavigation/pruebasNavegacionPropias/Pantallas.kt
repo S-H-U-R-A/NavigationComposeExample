@@ -206,3 +206,103 @@ fun Pantalla3AnidadaForgotPassword(
         )
     }
 }
+
+@Composable
+fun Profile(
+    modifier: Modifier = Modifier,
+    onNavigation: () -> Unit,
+) {
+    Box(
+        modifier = modifier
+            .fillMaxSize()
+            .background(color = Color.White),
+        contentAlignment = Alignment.Center
+    ){
+        Text(
+            text = "Pantalla PROFILE",
+            color = Color.Red,
+            fontWeight = FontWeight.Bold,
+            fontSize = 24.sp,
+            textAlign = TextAlign.Center,
+            modifier = Modifier.
+            clickable {
+                onNavigation()
+            }
+        )
+    }
+}
+
+@Composable
+fun FriendList(
+    modifier: Modifier = Modifier,
+    onNavigation: () -> Unit,
+) {
+    Box(
+        modifier = modifier
+            .fillMaxSize()
+            .background(color = Color.White),
+        contentAlignment = Alignment.Center
+    ){
+        Text(
+            text = "Pantalla FRIEND LIST",
+            color = Color.Green,
+            fontWeight = FontWeight.Bold,
+            fontSize = 24.sp,
+            textAlign = TextAlign.Center,
+            modifier = Modifier.
+            clickable {
+                onNavigation()
+            }
+        )
+    }
+}
+
+@Composable
+fun FriendDetail(
+    modifier: Modifier = Modifier,
+    onNavigation: () -> Unit,
+) {
+    Box(
+        modifier = modifier
+            .fillMaxSize()
+            .background(color = Color.White),
+        contentAlignment = Alignment.Center
+    ){
+        Text(
+            text = "Pantalla FRIEND DETAIL",
+            color = Color.Green,
+            fontWeight = FontWeight.Bold,
+            fontSize = 24.sp,
+            textAlign = TextAlign.Center,
+            modifier = Modifier.
+            clickable {
+                onNavigation()
+            }
+        )
+    }
+}
+
+@Composable
+fun About(
+    modifier: Modifier = Modifier,
+    onNavigation: () -> Unit,
+) {
+    Box(
+        modifier = modifier
+            .fillMaxSize()
+            .background(color = Color.White),
+        contentAlignment = Alignment.Center
+    ){
+        Text(
+            text = "Pantalla About",
+            color = Color.Blue,
+            fontWeight = FontWeight.Bold,
+            fontSize = 24.sp,
+            textAlign = TextAlign.Center,
+            modifier = Modifier.
+            clickable {
+                onNavigation()
+            }
+        )
+    }
+}

@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.plugin.mpp.pm20.util.libsDirectory
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -50,6 +52,8 @@ android {
 }
 
 dependencies {
+
+    implementation( project(":navigation"))
 
     //KOTLIN
     implementation(dependencyNotation= "androidx.core:core-ktx:1.12.0")
